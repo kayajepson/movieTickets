@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <title>Address Book</title>
+    <title></title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Address Book</h1>
+      <div class="row">
+        <div class="col-md-6">
+          <hr>
+          <h2>Add a Ticket:</h2>
+          <form id="new-ticket">
+            <div id="new-movie-name">
+              <h4>Select a Movie</h4>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="movieName" value="-3">
+                  Jason Pt. VIII - Jason Takes Manhatten
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="movieName" value="3">
+                  Dumbo
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="movieName" value="-3">
+                  The Godfather
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="movieName" value="3">
+                  The Lego Movie 2
+                </label>
+              </div>
+            </div>
+            <div id="new-movie-time">
+              <h4>Ticket Type</h4>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="movieTime" value="-3">
+                  Matinee
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="movieTime" value="3">
+                  Non-Matinee
+                </label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="new-user-age">User Age</label>
+              <input type="number"  class="form-control" id="new-user-age">
+            </div>
+            <button type="submit" class="btn-primary">Add to Cart</button>
+          </form>
+          <hr>
+          <h2>Tickets:</h2>
+          <ul id="tickets">
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <div id="show-ticket">
+            <p>Movie Name: <span class="movie-name"></span></p>
+            <p>Movie Time: <span class="movie-time"></span></p>
+            <p>User Age: <span class="user-age"></span></p>
+            <div id="buttons">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
