@@ -86,7 +86,6 @@ $(document).ready(function() {
     event.preventDefault();
     var inputtedMovieName = parseInt($("input:radio[name=movieName]:checked").val());
     var inputtedMovieTime = parseInt($("input:radio[name=movieTime]:checked").val());
-    console.log(inputtedMovieTime);
     var inputtedUserAge = parseInt($("input#new-user-age").val());
     // if (inputtedEmailAddress2) {
     //   $("#email2").show();
@@ -97,13 +96,23 @@ $(document).ready(function() {
     $("input#new-movie-time").val("");
     $("input#new-user-age").val("");
     var newTicket = new Ticket(inputtedMovieName, inputtedMovieTime, inputtedUserAge);
+    var ticketPrice = 10;
     userCart.addTicket(newTicket);
     displayTicketDetails(userCart);
-    for (var i=0; i <= userCart.tickets.length; i++) {
-
+    for (var i = 0; i <= userCart.tickets.length - 1; i++) {
+      if (userCart.tickets[i].userAge > 65) {
+        ticketPrice -= 3;
+      }
+      ticketPrice += (userCart.tickets[i].movieName)
+      ticketPrice += (userCart.tickets[i].movieTime)
+    // } if (userCart.tickets[i].movieTime) {
+    //   ticketPrice += 3;
+    // } else {
+    //   ticketPrice -= 3;
     }
-    console.log(userCart.tickets[0].userAge);
-    console.log(userCart.tickets.length);
-    console.log(userCart.tickets[0].movieName);
+    // console.log(userCart.tickets.length);
+    console.log(ticketPrice);
+    // console.log(userCart.tickets[0].userAge);
+    // console.log(userCart.tickets[0].movieName);
   })
 })
