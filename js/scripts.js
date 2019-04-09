@@ -85,6 +85,7 @@ $(document).ready(function() {
   $("form#new-ticket").submit(function(event) {
     event.preventDefault();
     var inputtedMovieName = parseInt($("input:radio[name=movieName]:checked").val());
+    console.log($("#lego").text());
     var inputtedMovieTime = parseInt($("input:radio[name=movieTime]:checked").val());
     var inputtedUserAge = parseInt($("input#new-user-age").val());
     // if (inputtedEmailAddress2) {
