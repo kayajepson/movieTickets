@@ -97,22 +97,18 @@ $(document).ready(function() {
     $("input#new-user-age").val("");
     var newTicket = new Ticket(inputtedMovieName, inputtedMovieTime, inputtedUserAge);
     var ticketPrice = 10;
+    var total = 0;
     userCart.addTicket(newTicket);
     displayTicketDetails(userCart);
     for (var i = 0; i <= userCart.tickets.length - 1; i++) {
       if (userCart.tickets[i].userAge > 65) {
         ticketPrice -= 3;
       }
-      ticketPrice += (userCart.tickets[i].movieName)
-      ticketPrice += (userCart.tickets[i].movieTime)
-    // } if (userCart.tickets[i].movieTime) {
-    //   ticketPrice += 3;
-    // } else {
-    //   ticketPrice -= 3;
+      ticketPrice += (userCart.tickets[i].movieName);
+      ticketPrice += (userCart.tickets[i].movieTime);
+      total += ticketPrice;
+      ticketPrice = 10;
     }
-    // console.log(userCart.tickets.length);
-    console.log(ticketPrice);
-    // console.log(userCart.tickets[0].userAge);
-    // console.log(userCart.tickets[0].movieName);
+    console.log(total);
   })
 })
